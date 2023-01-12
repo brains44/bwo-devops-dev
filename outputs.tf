@@ -28,3 +28,10 @@ output "KubeConfig" {
   value = data.oci_containerengine_cluster_kube_config.KubeConfig.content
 }
 
+output "oracle-linux-bwo-latest-name" {
+  value = data.oci_core_images.oraclelinux-bwo.images.0.display_name
+}
+
+output "oracle-linux-bwo-latest-id" {
+  value = data.oci_core_images.oraclelinux-bwo.images.0.id
+}
