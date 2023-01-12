@@ -184,3 +184,11 @@ variable "is_force_delete_after_grace_duration" {
 variable "defined_tags" {
   default = {}
 }
+variable "oci_operating_system" {
+  type = string
+  description = "Image os name"
+}
+variable "oci_operating_system_version" {
+  type = string
+  description = "Image os version"
+}
