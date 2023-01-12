@@ -36,3 +36,16 @@ data "oci_containerengine_cluster_kube_config" "KubeConfig" {
   cluster_id    = oci_containerengine_cluster.oci_oke_cluster.id
   token_version = var.cluster_kube_config_token_version
 }
+
+# get latest Oracle Linux image based on tf
+data "oci_core_images" "oraclelinux-bwo" {
+  compartment_id           = var.oci_compartment
+  operating_system         = var.oci_operating_system
+  operating_system_version = var.oci_operating_system_version
+  filter {
+    name   = "display_name"
+    values = ["^([a-zA-z]+)-([a-zA-z]+)-([\\.0-9]+)-([\\.0-9-]+)$"]
+    regex  = true
+  }
+}
+
