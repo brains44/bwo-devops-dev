@@ -39,7 +39,7 @@ data "oci_containerengine_cluster_kube_config" "KubeConfig" {
 
 # get latest Oracle Linux image based on tf
 data "oci_core_images" "oraclelinux-bwo" {
-  compartment_id           = var.oci_compartment
+  compartment_id           = var.compartment_ocid
   operating_system         = var.oci_operating_system
   operating_system_version = var.oci_operating_system_version
   filter {
